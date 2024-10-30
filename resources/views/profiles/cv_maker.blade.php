@@ -28,7 +28,7 @@
                 <a href="./welcomeCv.html"><i class="fa fa-forward ml-2 text-white "></i></a>
 
 
-                <span class="d-none d-lg-inline hover:text-decoration-none"><a href="./welcomeCv.html"
+                <span class="d-none d-lg-inline hover:text-decoration-none"><a href="{{ route('welcomeCv') }}"
                         class="text-white ">الصفحة الرئيسية</a>
                 </span>
             </div>
