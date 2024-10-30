@@ -10,14 +10,15 @@
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../static/css/welcomecv.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/welcomecv.css') }}" />
+    
 </head>
 
 <body>
     <nav class="p-3 navbar">
         <div class="logo">
             <div class="col-12">
-                <img class="w-100" src="../static/images/logoblack.png" alt="Logo">
+                <img class="w-100" src="{{ asset('assets/images/logoblack.png') }}" alt="Logo">
             </div>
         </div>
     </nav>
@@ -34,7 +35,8 @@
             </div>
             <div class="col-md-6 mt-5 mt-md-0">
                 <div class="img">
-                    <img src="../static/images/Cv.png" alt="Person holding CV" class="w-100">
+                    <img src="{{ asset('assets/images/Cv.png') }}" alt="Person holding CV" class="w-100">
+                    
                 </div>
             </div>
         </div>
@@ -68,7 +70,8 @@
                     <div class="steps-img d-none d-lg-flex">
                         <div class="box">
                             <div id="img-container">
-                                <img src="../static/images/data.jpg" alt="Image 1" id="main-image">
+                                <img  src="{{ asset('assets/images/data.jpg') }}" alt="Image 1" id="main-image">
+                               
                             </div>
                         </div>
                     </div>
@@ -117,7 +120,8 @@
                     <div class="image-content">
                         <span class="overlay"></span>
                         <div class="card-image">
-                            <img src="../static/images/3d-illustration-business-man-with-glasses_23-2149436194.avif"
+                            <img 
+                            src="{{ asset('assets/images/3d-illustration-business-man-with-glasses_23-2149436194.avif') }}"
                                 alt="man" class="card-img">
                         </div>
                     </div>
@@ -131,7 +135,7 @@
                     <div class="image-content">
                         <span class="overlay"></span>
                         <div class="card-image">
-                            <img src="../static/images/3d-illustration-business-man-with-glasses_23-2149436194.avif"
+                            <img src="{{ asset('assets/images/3d-illustration-business-man-with-glasses_23-2149436194.avif') }}"
                                 alt="man" class="card-img">
                         </div>
                     </div>
@@ -158,15 +162,18 @@
 
 
     <!-- jQuery -->
-    <script src="../scripts/js/jquery.min.js"></script>
-
+   <!-- <script src="../scripts/js/jquery.min.js"></script> -->
+    <script src= "{{ asset('assets/js/jquery.min.js') }}"> </script>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src= "{{ asset('assets/js/bootstrap.bundle.min.js') }}"> </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src= "{{ asset('assets/js/swiper-bundle.min.js') }}"> </script>
     <!-- Your custom script -->
-    <script src="../scripts/js/welcomeCv.js"></script>
+    <!-- <script src="../scripts/js/welcomeCv.js"></script> -->
+    <script src= "{{ asset('assets/js/welcomeCv.js') }}"> </script>
+    
 
 </body>
 

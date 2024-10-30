@@ -57,11 +57,18 @@ let currentIndex = 0;
 let slideshowInterval;
 
 // Images Array
-const images = [
+/*const images = [
     "../static/images/data.jpg",  // Image 1
     "../static/images/cv-temp2.jpg",  // Image 2
     "../static/images/cv-temp2.jpg"   // Image 3
-];
+]; */
+
+// Images Array
+const images = [
+    "../images/data.jpg",  // Image 1
+    "../images/cv-temp2.jpg",  // Image 2
+    "../images/cv-temp2.jpg"   // Image 3
+]; 
 
 function updateImage(index) {
     mainImage.classList.remove('active');  // Hide current image
