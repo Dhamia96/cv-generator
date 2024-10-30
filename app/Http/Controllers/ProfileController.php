@@ -19,7 +19,7 @@ class ProfileController extends Controller
         $languages= $profile->languages;
         return view('profiles.show', compact('profile', 'languages'));
     }
-    public function showCvMaker()
+    public function createCv()
     {
         return view('profiles.cv_maker');
     }

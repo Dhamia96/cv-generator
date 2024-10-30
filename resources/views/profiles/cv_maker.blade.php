@@ -28,7 +28,7 @@
                 <a href="./welcomeCv.html"><i class="fa fa-forward ml-2 text-white "></i></a>
 
 
-                <span class="d-none d-lg-inline hover:text-decoration-none"><a href="{{ route('welcomeCv') }}"
+                <span class="d-none d-lg-inline hover:text-decoration-none"><a href="{{ route('profiles.welcomeCv') }}"
                         class="text-white ">الصفحة الرئيسية</a>
                 </span>
             </div>
@@ -98,9 +98,9 @@
                         </button></a>
 
                 </div>
-
+                <form id="cvForm">
                 <div class="border-bottom border-secondary mb-3 ">
-            
+                
                     <!-- التفاصيل الشخصية -->
                     <div class="d-flex align-items-center justify-content-between py-2 w-100">
                         <div class="flex-grow-1 d-flex py-3 pe-3 text-start overflow-hidden rounded">
@@ -109,12 +109,12 @@
                                 <span class="position-absolute visually-hidden">التفاصيل الشخصية</span>
                                 <input type="text"
                                     class="form-control-plaintext w-100 border-bottom-0 rounded-0 bg-transparent p-0"
-                                    placeholder="التفاصيل الشخصية" maxlength="1000" " style=" direction: rtl;">
+                                    placeholder="التفاصيل الشخصية" maxlength="1000"  style=" direction: rtl;">
                             </div>
                         </div>
                         <div class="py-3 d-flex align-items-start">
 
-                            <button id="arrowUp1" class=" btn btn-outline-secondary d-flex align-items-center justify-content-center
+                            <button id="arrowUp1" type="button" class=" btn btn-outline-secondary d-flex align-items-center justify-content-center
                                         rounded p-2">
                                 <i id="arrow1" class="fa fa-arrow-down pointer-events-none flex-shrink-0 box-content "
                                     aria-hidden="true"></i>
@@ -304,7 +304,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp2"
+                                <button id="arrowUp2" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                 rounded p-2">
                                     <i id="arrow2"
@@ -627,7 +627,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp3"
+                                <button id="arrowUp3" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                     rounded p-2">
                                     <i id="arrow3"
@@ -736,7 +736,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp4"
+                                <button id="arrowUp4" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                                         rounded p-2">
                                     <i id="arrow4"
@@ -799,7 +799,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp9"
+                                <button id="arrowUp9" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                                                                                     rounded p-2">
                                     <i id="arrow9"
@@ -857,7 +857,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp6"
+                                <button id="arrowUp6" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                                                                                 rounded p-2">
                                     <i id="arrow6"
@@ -910,7 +910,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp5"
+                                <button id="arrowUp5" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                                                                 rounded p-2">
                                     <i id="arrow5"
@@ -973,7 +973,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp7"
+                                <button id="arrowUp7" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                     rounded p-2">
                                     <i id="arrow7"
@@ -1079,7 +1079,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp8"
+                                <button id="arrowUp8" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                                         rounded p-2">
                                     <i id="arrow8"
@@ -1186,7 +1186,7 @@
                                 <div class="ml-2">
 
                                 </div>
-                                <button id="arrowUp10"
+                                <button id="arrowUp10" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                                         rounded p-2">
                                     <i id="arrow10"
@@ -1243,7 +1243,7 @@
 
                             <div class="py-3 d-flex align-items-start">
 
-                                <button id="arrowUp11"
+                                <button id="arrowUp11" type="button"
                                     class="btn btn-outline-secondary d-flex align-items-center justify-content-center
                                                                                                                                                                                         rounded p-2">
                                     <i id="arrow11"
@@ -1306,6 +1306,9 @@
                     <button class="add px-4 py-3 btn"><span class="mx-1"><i class="fa fa-plus"></i></span>
                         إضافة البيانات</button>
                 </div>
+                </form>
+                
+                
 
             </div>
             <!-- left section -->

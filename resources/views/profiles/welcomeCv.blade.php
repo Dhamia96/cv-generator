@@ -29,7 +29,7 @@
                 <h1>مرحباً بك في فائدة <br>لإنشاء السيرة الذاتية</h1>
                 <p>املأ التفاصيل الخاصة بك، واختر القالب المناسب، ثم قم بتنزيل سيرتك الذاتية على الفور.</p>
                 <button class="btn btn-primary">
-                    <a href="{{ route('cv_maker') }}">إنشاء السيرة الذاتية</a>
+                    <a href="{{ route('profiles.cv_maker') }}">إنشاء السيرة الذاتية</a>
                     </button>
             </div>
             <div class="col-md-6 mt-5 mt-md-0">
