@@ -55,45 +55,57 @@ const mainImage = document.getElementById('main-image');
 
 let currentIndex = 0;
 let slideshowInterval;
+let isImageLoading = false; // Track if image is currently loading
 
-// Images Array
-/*const images = [
-    "../static/images/data.jpg",  // Image 1
-    "../static/images/cv-temp2.jpg",  // Image 2
-    "../static/images/cv-temp2.jpg"   // Image 3
-]; */
-
-// Images Array
+// Pass image URLs from Blade to JavaScript
 const images = [
-    "../images/data.jpg",  // Image 1
-    "../images/cv-temp2.jpg",  // Image 2
-    "../images/cv-temp2.jpg"   // Image 3
-]; 
+    imagePaths.data,
+    imagePaths.cvTemp2,
+    imagePaths.cvTemp3
+];
 
 function updateImage(index) {
+    if (isImageLoading) return; // Prevent image update if one is already in progress
+
+    isImageLoading = true; // Set loading state
     mainImage.classList.remove('active');  // Hide current image
-    setTimeout(() => {
-        mainImage.src = images[index];     // Update the image source
-        mainImage.classList.add('active'); // Show the new image with animation
-    }, 500);
+
+    const newImage = new Image(); // Create a new Image object
+    newImage.src = images[index]; // Set the source
+
+    newImage.onload = () => { // On successful load
+        mainImage.src = newImage.src; // Update the main image
+        mainImage.classList.add('active'); // Show the new image
+        isImageLoading = false; // Reset loading state
+    };
+
+    newImage.onerror = () => { // Handle load error
+        console.error(`Failed to load image: ${newImage.src}`);
+        isImageLoading = false; // Reset loading state
+        // Optionally, set a default image or retry loading
+    };
 }
 
 steps.forEach((step, index) => {
     step.addEventListener('click', () => {
+        console.log("Step clicked:", index); // Log the clicked step index
         updateImage(index);
     });
 });
+
 function startSlideshow() {
     slideshowInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % images.length; // Move to the next image
         updateImage(currentIndex);
-    }, 10000);
+    }, 10000); // Adjusted interval for slideshow
 }
+
 // Show the first image immediately when the page loads
 window.addEventListener('DOMContentLoaded', () => {
     updateImage(0); // Display the first image
     setTimeout(startSlideshow, 300); // Start slideshow after 3 seconds delay
 });
+
 function stopSlideshow() {
     clearInterval(slideshowInterval);
 }

@@ -25,32 +25,22 @@
 
     <!-- <div class="container"> شلته عشان تكون الـباكقراوند تغطي الشاشة كاملة من اليمين واليسار -->
 
-    <div class="header-section1">
-        <div class="bg"></div>
-        <div class="bg bg2"></div>
-        <div class="bg bg3"></div>
-
-        <div class="row align-items-center">
+        <div class="row align-items-center header-section1">
             <div class="col-md-6 text-right">
-                <div class="header-content">
-                    <h1>مرحباً بك في فائدة لإنشاء السيرة الذاتية</h1>
-                    <h6>إملأ التفاصيل الخاصة بك، واختر القالب المناسب، ثم قم بتنزيل سيرتك الذاتية على الفور!</h6>
-                    <button class="btn btn-primary">
-                        <a href="{{ route('profiles.cv_maker') }}">إنشاء السيرة الذاتية</a>
+                <h1>مرحباً بك في فائدة لإنشاء السيرة الذاتية</h1>
+                <p>إملأ التفاصيل الخاصة بك، واختر القالب المناسب، ثم قم بتنزيل سيرتك الذاتية على الفور.</p>
+                <button class="btn btn-primary">
+                    <a href="{{ route('profiles.cv_maker') }}">إنشاء السيرة الذاتية</a>
                     </button>
-                </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-5 mt-md-0">
                 <div class="img">
                     <img src="{{ asset('assets/images/Cv.png') }}" alt="Person holding CV" class="w-100">
                 </div>
             </div>
-        </div>
-    </div>
         <!-- </div>  تبع class="container"-->
-
-    <!-- <div class="container how"> -->
-    <div class="container-fluid" style="background-color:#F7F7F7">
+    </div>
+    <div class="container how">
         <div class="row">
             <div class="col-12">
                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
@@ -62,15 +52,15 @@
             <div class="col-12 d-flex flex-column flex-md-row align-items-center justify-content-between">
                 <div class="col-lg-6 d-flex justify-content-center  justify-content-md-start">
                     <div class="steps  d-flex gap-3 flex-column ">
-                        <div class="step w-100" id="step-1">
+                        <div class="step1 w-100" id="step-1">
                             <span class="step-number">1</span>
                             <p>املأ التفاصيل الخاصة بك، واختر القالب المناسب. ثم قم بتنزيل سيرتك الذاتية على الفور.</p>
                         </div>
-                        <div class="step w-100" id="step-2">
+                        <div class="step2 w-100" id="step-2">
                             <span class="step-number">2</span>
                             <p>استخدم قالبًا بسيطًا واحترافيًا لتسهيل قراءة المعلومات.</p>
                         </div>
-                        <div class="step w-100" id="step-3">
+                        <div class="step3 w-100" id="step-3">
                             <span class="step-number">3</span>
                             <p>راجع السيرة الذاتية للتأكد من عدم وجود أخطاء إملائية أو نحوية ثم قم بتحميلها.</p>
                         </div>
@@ -81,7 +71,8 @@
                     <div class="steps-img d-none d-lg-flex">
                         <div class="box">
                             <div id="img-container">
-                                <img  src="{{ asset('assets/images/resumes1.jpg') }}" alt="Image 1" id="main-image">   
+                                <img  src="{{ asset('assets/images/data.jpg') }}" alt="Image 1" id="main-image">
+                               
                             </div>
                         </div>
                     </div>
@@ -91,10 +82,16 @@
         </div>
     </div>
 
-    <div class="container-fluid" style="background-color:#253048">
+
+
+
+
+
+
+
     <div class="col-12 d-flex flex-column p-4 mb-5 text-center rounded">
         <div class="d-flex justify-content-center mt-5">
-            <h2 class="mb-5 how-work" style="color:#fff">السيرالذاتية</h2>
+            <h2 class="mb-5 how-work ">السير الذاتية</h2>
         </div>
         <p>نحن نقدم لك أفضل الأدوات لإنشاء سيرتك الذاتية بشكل احترافي وسهل.</p>
     </div>
@@ -109,11 +106,10 @@
             </div>
         </div>
     </div>
-</div>
 
 
-    <div class="d-flex justify-content-center mt-5">
-            <h2 class="mb-5 how-work ">أشخاص قاموا بإنشاء سيرتهم الذاتية في فائدة</h2>
+    <div class="col-12 d-flex flex-column justify-content-center align-items-start p-4 mb-5 text-right rounded">
+        <h3>أشخاص قاموا بإنشاء سيرتهم الذاتية في فائدة</h3>
     </div>
 
 
@@ -125,7 +121,7 @@
                         <span class="overlay"></span>
                         <div class="card-image">
                             <img 
-                            src="{{ asset('assets/images/user-icon.jpg') }}"
+                            src="{{ asset('assets/images/3d-illustration-business-man-with-glasses_23-2149436194.avif') }}"
                                 alt="man" class="card-img">
                         </div>
                     </div>
@@ -139,7 +135,7 @@
                     <div class="image-content">
                         <span class="overlay"></span>
                         <div class="card-image">
-                            <img src="{{ asset('assets/images/user-icon.jpg') }}"
+                            <img src="{{ asset('assets/images/3d-illustration-business-man-with-glasses_23-2149436194.avif') }}"
                                 alt="man" class="card-img">
                         </div>
                     </div>
@@ -164,13 +160,7 @@
 
 
 
-    <script>
-    const imagePaths = {
-        data: "{{ asset('assets/images/resumes1.jpg') }}",
-        cvTemp2: "{{ asset('assets/images/audit-download-resume.jpg') }}",
-        cvTemp3: "{{ asset('assets/images/resumes1.jpg') }}"
-    }; </script>
-    
+
     <!-- jQuery -->
    <!-- <script src="../scripts/js/jquery.min.js"></script> -->
     <script src= "{{ asset('assets/js/jquery.min.js') }}"> </script>

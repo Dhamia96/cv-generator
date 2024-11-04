@@ -1,12 +1,15 @@
-html {
-    height: 100%;}
-
 body {
+    background-color: #ffffff;
     font-family: 'Cairo', sans-serif;
-    margin: 0;
 }
 
-
+.content {
+    align-items: center;
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-size: contain;
+    height: 110vh;
+}
 
 a {
     color: inherit;
@@ -91,58 +94,37 @@ a {
 
 /* هنا بدت الأشياء تبع slanted background */
 .header-section1 {
-    position: relative; /* Ensure the header section is positioned correctly */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow */
+    position: relative;
+    padding: 50px;
+    text-align: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
 }
 
-.bg {
-    animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #37476B 60%, #e7e3e3 40%);
-    bottom: 0;
-    left: -50%;
-    opacity: .5;
-    position: absolute; /* Change to absolute */
-    right: -50%;
+.header-section1::before {
+    content: '';
+    position: absolute;
     top: 0;
-    z-index: -1; /* Behind content */
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100%; /* Full height of the section */
+    background: linear-gradient(135deg, #6894D6, #3F5985); /* Adjust colors */
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); /* Slant effect */
+    z-index: 0; /* Send background behind */
 }
 
-.bg2 {
-    animation-direction: alternate-reverse;
-    animation-duration: 4s;
+.header-section1 .container {
+    position: relative; /* Maintain stacking context */
+    z-index: 1; /* Ensure content is above the background */
 }
 
-.bg3 {
-    animation-duration: 5s;
+.header-section1 h1,
+.header-section1 p,
+.header-section1 .btn-primary {
+    position: relative; /* Maintain stacking context */
+    z-index: 1; /* Bring text and buttons above the background */
 }
 
-
-
-
-
-
-.header-content {
-    padding: 10vmin;
-    text-align: center; /* Align text to the right */
-    z-index: 1; /* Ensure content is above background */
-}
-
-h1 {
-    font-family: monospace;
-    color: #ffffff; /* Text color */
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(-25%);
-    }
-    100% {
-        transform: translateX(25%);
-    }
-}
-
-.img {
+.header-section1 .img {
     position: relative; /* Maintain stacking context for the image */
     z-index: 1; /* Ensure the image is above the background */
     width: 100%;
@@ -150,26 +132,13 @@ h1 {
     margin-top: 10px; /* Add spacing for the image */
 }
 
-.header-section1 h1,
-.header-section1 h6,
-.header-section1 .btn-primary {
-    z-index: 1; /* Bring text and buttons above the background */
-}
-
-.header-section1 h6 {
-    color: #ffffff; /* Text color */
-}
-
-.btn-primary {
-    background-color: #c8102e;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    box-shadow: 5px 4px 8px rgba(0, 0, 0);
-}
-
-.btn-primary:hover {
-    background-color: #a00e28;
+.header-section1 h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-top: 20px;
+    text-align: right;
+    line-height: 4rem;
+    margin-bottom: 2rem;
 }
 /* هنا انتهت الأشياء تبع tilt */
 
@@ -195,8 +164,62 @@ h1 {
 
 } */
 
+.header-section1 p {
+    font-size: 1rem;
+    color: #ffffff;
+}
 
+.btn-primary {
+    background-color: #c8102e;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0);
+}
 
+.btn-primary:hover {
+    background-color: #a00e28;
+}
+
+.info-text {
+    font-size: 1.2rem;
+    color: #6c757d;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 2s ease forwards;
+    text-align: right;
+    margin-top: 1rem;
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+}
+
+.info-text:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.info-text:nth-of-type(3) {
+    animation-delay: 2s;
+}
+
+.info-text:nth-of-type(4) {
+    animation-delay: 3s;
+}
+
+.info-text:nth-of-type(5) {
+    animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes fadeUp {
     0% {
@@ -418,12 +441,36 @@ img {
 
 .how-work {
     font-size: 3em;
-    color: #4e4d4d;
+    color: #456191;
     position: relative;
     /* مهم لوضع الخطين */
     display: inline-block;
     padding-bottom: 10px;
     /* لضبط المسافة بين النص والخطين */
+}
+
+.how-work::before,
+.how-work::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    /* طول الخط */
+    height: 3px;
+    /* سمك الخط */
+    background-color: #2b3a4a;
+    /* لون الخط */
+    bottom: 0;
+    /* لضبط الخط تحت النص */
+}
+
+.how-work::before {
+    left: 0;
+    /* الخط الأول على اليسار */
+}
+
+.how-work::after {
+    right: 0;
+    /* الخط الثاني على اليمين */
 }
 
 .steps {
@@ -433,15 +480,6 @@ img {
     margin-bottom: 50px;
     padding: 5rem;
 }
-
-.step {
-    transition: transform 0.3s ease; /* Smooth transition for the transform effect */
-    padding: 20px; /* Add some padding for better appearance */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    color: white; /* Text color for better contrast */
-}
-
 
 /*.step {
     background-color: #fff;
@@ -454,9 +492,8 @@ img {
     cursor: pointer;
 } */
 
-#step-1{
-    background-color: #FFC02B; 
-    /*background-color: #456191; */
+.step1{
+    background-color: #FFC02B;
     border-radius: 10px;
     padding: 20px;
     width: 30%;
@@ -466,9 +503,8 @@ img {
     cursor: pointer;
 }
 
-#step-2{
-    background-color: #456191; 
-    /*background-color: #456191; */
+.step2{
+    background-color: #456191;
     border-radius: 10px;
     padding: 20px;
     width: 30%;
@@ -478,9 +514,8 @@ img {
     cursor: pointer;
 }
 
-#step-3{
-    background-color: #BF2A4A; 
-    /*background-color: #456191; */
+.step3{
+    background-color: #CF0746;
     border-radius: 10px;
     padding: 20px;
     width: 30%;
@@ -490,9 +525,19 @@ img {
     cursor: pointer;
 }
 
-.step:hover {
-    transform: scale(1.05); /* Scale up the card slightly on hover */
+
+
+.step{
+    background-color: #FFC02B;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    min-height: 13rem;
+    text-align: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
+
 .step-number {
     display: block;
     font-size: 1.5em;
